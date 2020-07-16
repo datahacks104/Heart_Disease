@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML Deployment</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+ <div class="login">
+	<h1>Predict Heart Disease</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    	<input type="text" name="age" placeholder="Age (Years)" required="required" />
+        <input type="text" name="sex" placeholder="Gender (1 = male; 0 = female)" required="required" />
+		<input type="text" name="cp" placeholder="chest pain type (0-3)" required="required" />
+		<input type="text" name="restbps" placeholder="Resting Blood Pressure (mm Hg )" required="required" />
+        <input type="text" name="chol" placeholder="Cholestoral (mg/dl)" required="required" />
+        <input type="text" name="fbs" placeholder="Fasting Blood Sugar(1 = true; 0 = false)" required="required" />
+        <input type="text" name="restecg" placeholder="Resting Electrocardiographic Results (1 = true; 0 = false)" required="required" />
+        <input type="text" name="thalach" placeholder="Maximum heart rate " required="required" />
+        <input type="text" name="exang" placeholder="Exercise Induced Angina (1 = yes; 0 = no)" required="required" />
+        <input type="text" name="oldpeak" placeholder="ST depression " required="required" />
+        <input type="text" name="slope" placeholder="Slop of Peak Exercise (0-3)" required="required" />
+        <input type="text" name="ca" placeholder="Number of Major Vessels (0-3)" required="required" />
+        <input type="text" name="thal" placeholder="3 = normal; 6 = fixed defect; 7 = reversable defect" required="required" />
+
+       <center><h3>Heart Disease 1 = yes; 0 = no</h3></center>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+     <center><h2>{{ prediction_text }}</h2></center>
+ </div>
+</body>
+</html>
