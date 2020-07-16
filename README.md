@@ -14,3 +14,8 @@
 ##### scikit-learn>= 0.21.3
 ##### matplotlib>=3.2.2
 ##### pandas>=0.25.1
+
+## This Web app is successfully uploaded to Heroku Cloud Platform
+https://heartdiseasepredictionapi.herokuapp.com/
+
+### Click on this link to visit my web app
